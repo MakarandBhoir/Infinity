@@ -1,0 +1,95 @@
+- When my remote repository is already exists and I want to clone it
+-----------------------------------------------------------
+Step 0: To set global username and email
+	git config --global user.email "bhoir.makarand@gmail.com"
+	git config --global user.user "MakarandBhoir"
+Step 1: Create git remote repo (https://github.com)
+Step 2: Clone the repo just you have created
+	git clone url_repo
+Step 3: Add any file to working repository (folder)
+Step 4: To check wheather any untrack file present in working tree
+	git status
+Step 5: Add the files to staging area
+	git add file_name
+	git add .
+Step 6: To save to local repository
+	git commit -m "commit message"
+	
+---------------------------------------------------
+- When I create first local repository and then push the contents to remote repository
+----------------------------------------------------------------------------
+Step 1: Create empty local repository
+	git init
+Step 2: Add new file to working tree
+Step 3: Add file to staging area
+	git add README.md
+	git add .
+Step 4: Save the files to local repository
+	git commit -m "first commit"
+Step 5: Set push url	
+	git remote add origin remote_url
+Step 6: Push the files to remote repository
+	git push -u origin master
+--------------------------------------------------
+Working with branch
+--------------------------------------------------
+Step 1 : Create branch 
+   git branch “branch name”
+Step 2 : Checkout branch
+   git checkout “branch name”
+Step 3: Add few files and execute following command
+   git push -u origin "branch name"
+Step 4: Checkout master branch
+   git checkout master
+Step 5: Merge new branch in master branch
+   git merge "branch name" --- merge will happend only in local
+   git push -u origin master --- merge will happend in remote
+Step 6 : Delete branch
+   git branch -d “branch name”    — delete from local
+   git push origin —delete “branch name”   — delete from remote
+-----------------------------------------------------
+Adding files to multiple repository
+
+Step 1: Adding first repo to variable (all)
+	git remote add all git_first_url
+Step 2: Register git_first_url as push url
+	git remote set-url --add --push all git_first_url
+Step 3: Add another git url as push url
+	git remote set-url --add --push all git_another_url
+Step 4: Push it to master branch
+	git push all master
+---------------------------------------------------
+Taking one local repository to another
+-----------------------------------------
+Step 1: Go to the first folder in cmd prompt
+Step 2: Register push url of another folder
+	git remote add var_name "folder_path"
+Step 3: Get all the contents from folder
+	git pull var_name or git fetch var_name
+--------------------------------------------------------
+
+Git Lab
+--------------------------------------------------------
+
+git remote add C "D:\Training\Capgemini\18-Feb-2020 To 18-Mar-2020\Module1\Devops\Git\Lab\C"
+git pull C development
+
+git remote add D "D:\Training\Capgemini\18-Feb-2020 To 18-Mar-2020\Module1\Devops\Git\Lab\D"
+git pull D testing
+
+
+Pull Development branch on C and Testing branch on D
+-----------------------------------------------------
+git init
+git remote add origin https://github.com/MakarandBhoir/A.git
+git fetch origin development
+git checkout --track origin/development
+
+git init
+git remote add origin https://github.com/MakarandBhoir/A.git
+git fetch origin testing
+git checkout --track origin/testing
+
+
+
+
